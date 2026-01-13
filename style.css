@@ -75,3 +75,28 @@ main {
 h2, h3 {
     margin: 0px;
 }
+/* Portfolio styles */
+.content h1 {
+  color: rgb(36, 176, 94);
+}
+
+#portfolio {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#portfolio li {
+  background: #349f9d;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#portfolio li:hover {
+  background: #2ccf55;
+}
+
+#portfolio a {
+  text-decoration: none;
+  color: #000000;
+}
