@@ -27,11 +27,25 @@ $(function () {
     //////////////////////////////////
 
     // TODO 1 - Enable the Grid
-    toggleGrid();
+    //toggleGrid();
 
 
     // TODO 2 - Create Platforms
-    
+createPlatform(1100, 500, 100, 50,"aqua");
+ createPlatform(100,700, 290, 10 ,"aqua" );
+ createPlatform(500, 650, 290, 10,"aqua");
+ createPlatform(900,600, 290,10,"aqua");
+ createPlatform(1200,400,290,10,"aqua");
+ createPlatform(750,400,290,10,"aqua");
+ createPlatform(300,400,290,10,"aqua");
+ createPlatform(100,400,100,50,"aqua")
+ createCollectable("gold",1250,350)
+ createCollectable("gold" ,350,350)
+ createCollectable("gold",100,350)
+ createCannon("top" ,1100, 3000)
+ createCannon("top",700,3000)
+ createCannon("top",300,2700)
+ 
 
 
 
