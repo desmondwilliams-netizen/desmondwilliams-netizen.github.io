@@ -30,19 +30,21 @@ var init = function (window) {
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
             physikz.addRandomVelocity(circle, canvas, 5, 5);
             view.addChild(circle);
-            circles.push(circles);
+            circles.push(circle);
          } 
 
 
         // TODO 3 : Call the drawCircle() function
-          drawCircle()   
-          drawCircle()
-          drawCircle()
-          drawCircle()
-          drawCircle() 
+        //   drawCircle()   
+        //   drawCircle()
+        //   drawCircle()
+        //   drawCircle()
+        //   drawCircle() 
 
         // TODO 7 : Use a loop to create multiple circles
-
+       for (var i = 0; i < 50; i++) {
+          drawCircle();
+        }
 
 
 
@@ -57,24 +59,28 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the position of each circle using physikz.updatePosition()
-         physikz.updatePosition(circles[0] /* bracket notation to access the first circle */);
-         physikz.updatePosition(circles[1]/* bracket notation to access the fifth circle */);
-         physikz.updatePosition(circles[2] /* bracket notation to access the second circle */);
-         physikz.updatePosition(circles[3] /* bracket notation to access the third circle */); 
-         physikz.updatePosition(circles[4] /* bracket notation to access the fourth circle */);
+         //physikz.updatePosition(circles[0] /* bracket notation to access the first circle */);
+         //physikz.updatePosition(circles[1]/* bracket notation to access the fifth circle */);
+         //physikz.updatePosition(circles[2] /* bracket notation to access the second circle */);
+         //physikz.updatePosition(circles[3] /* bracket notation to access the third circle */); 
+         //physikz.updatePosition(circles[4] /* bracket notation to access the fourth circle */);
 
             // TODO 5 : Call game.checkCirclePosition() on your circles
-            //  game.checkCirclePosition( circles[0] /* bracket notation to access the first circle */);
-            //  game.checkCirclePosition( circles[1] /* bracket notation to access the second circle */);
-            //  game.checkCirclePosition(circles[2] /* bracket notation to access the third circle */);
-            //  game.checkCirclePosition(circles[3] /* bracket notation to access the fourth circle */);
-            //  game.checkCirclePosition(circles[4] /* bracket notation to access the fifth circle */);
+             //game.checkCirclePosition( circles[0] /* bracket notation to access the first circle */);
+             //game.checkCirclePosition( circles[1] /* bracket notation to access the second circle */);
+             //game.checkCirclePosition(circles[2] /* bracket notation to access the third circle */);
+             //game.checkCirclePosition(circles[3] /* bracket notation to access the fourth circle */);
+             //game.checkCirclePosition(circles[4] /* bracket notation to access the fifth circle */);
 
             // TODO 8 / TODO 9 : Iterate over the array
-           
-            
+           for (var  i = 0; i < circles.length; i++) { 
         }
-    
+          for (var i = 0; i < circles.length; i++){
+         physikz.updatePosition(circles[i]);
+
+        game.checkCirclePosition(circles[i]);
+
+          }
         /* 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
@@ -83,22 +89,23 @@ var init = function (window) {
         game.checkCirclePosition = function(circle) {
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-            // if ( circle.x > canvas.width ) {
-                // circle.x = 0;
-            // }
+            if ( circle.x > canvas.width ) {
+                 circle.x = 0;
+            }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            //if (circle.x < 0) { 
-           //circle.x = width;
-          // }
+            
+            if (circle.x < 0) { 
+           circle.x = width;
+          }
 
-          // if (circle.y < 0) {
-         //circle.y = height;
-        // }
+          if (circle.y < 0) {
+         circle.y = height;
+        }
 
-        //if (circle.y > height) {
-          //circle.y = 0;
-        // }
+        if (circle.y > height) {
+        circle.y = 0;
+        }
 
             
             
@@ -129,4 +136,5 @@ if((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
     module.exports = init;
+}
 }
