@@ -75,7 +75,7 @@ var init = function (window) {
             // TODO 8 / TODO 9 : Iterate over the array
            for (var  i = 0; i < circles.length; i++) { 
          physikz.updatePosition(circles[i])
-        // game.checkCirclePosition(circles[i])
+        game.checkCirclePosition(circles[i])
         }
         }
        
@@ -84,27 +84,27 @@ var init = function (window) {
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
         */
-        game.checkCirclePosition = function(circle) {
+       game.checkCirclePosition = function(circle) {
 
-            // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-            if ( circle.x > canvas.width ) {
+           // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
+           if ( circle.x > canvas.width ) {
                 
                  circle.x = 0;
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             
-        // if (circle.x < 0) { 
-        //    circle.x = canvas.width;
-        //   }
+             if (circle.x < 0) { 
+            circle.x = canvas.width;
+          }
 
-        // if (circle.y < 0) {
-        //   circle.y = canvas.height;
-        // }
+        if (circle.y < 0) {
+           circle.y = canvas.height;
+            }
 
-        // if (circle.y > canvas.height) {
-        //   circle.y = 0;
-        // }
+         if (circle.y > canvas.height) {
+           circle.y = 0;
+         }
 
             
             
